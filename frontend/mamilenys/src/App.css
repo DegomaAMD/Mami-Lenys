@@ -1,38 +1,270 @@
-.App {
-  text-align: center;
+:root{
+  --mainText-color: #FFFDEB;
+  --mainBg-color: #A51015;
+  --secondaryBg-color: #F7C35F;
+  --redBg-color1: #891212;
+  --redBg-color2: #933333;
+  --redBg-color3: #621515;
+  --redBg-color4: #823131;
+  --redBg-color5: #501111;
+  --whiteBg-color1: #DDDDDD;
+  --yellowBg-color1: #F8CC77;
+  --blackBg-color1: #000000;
+  --blackBg-color2: #1A1A1A;
+  --greyBg-color1: #6D6565;
+  font-size: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Google Fonts */
+.livvic-thin {
+  font-family: "Livvic", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.livvic-extralight {
+  font-family: "Livvic", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.livvic-light {
+  font-family: "Livvic", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.livvic-regular {
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.livvic-medium {
+  font-family: "Livvic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.livvic-semibold {
+  font-family: "Livvic", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.livvic-bold {
+  font-family: "Livvic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.livvic-black {
+  font-family: "Livvic", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.livvic-thin-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.livvic-extralight-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.livvic-light-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.livvic-regular-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.livvic-medium-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.livvic-semibold-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.livvic-bold-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.livvic-black-italic {
+  font-family: "Livvic", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Universal Styles */
+*{
+  font-family: "Livvic", sans-serif !important;
+}
+button{
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+  background-color: var(--mainBg-color) !important;
+}
+/* TRANSITION EFFECT */
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+
+}
+.fade-exit {
+  opacity: 1;
+  
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+
+}
+
+/* NavBar Component start*/
+.brand{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.brand > span {
+  color: var(--mainText-color);
+}
+
+.nav{
+  margin: 0 30px;
+}
+
+nav{
+  background-color: var(--mainBg-color) !important;
+  font-size: 1.6rem;
+}
+
+
+@media (max-width: 599px){
+  .brand > span {
+    display: none;
   }
 }
+/* NavBar Component end*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Homepage start */
+.hero{
+  background: url(./assets/img/hero-bg.png);
+  width: 100%;
+  height: 920px;
+  position: relative;
+}
+
+.hero-banner{
+  position: absolute;
+  top: 20%;
+  left: 0;
+  transform: translate(10%, 50%);
   display: flex;
   flex-direction: column;
+  width: 730px;
+}
+.hero-banner > p:nth-child(1){
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: var(--mainText-color);
+  position: relative;
+}
+.hero-banner > p:nth-child(1)::before{
+  content: '';
+  background: url(./assets/img/Underline.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 215px;
+  height: 30px;
+  position: absolute;
+  bottom: -14px;
+  z-index: -1;
+}
+.hero-banner > p:nth-child(2){
+  font-weight: 700;
+  font-style: normal;
+  font-size: 7rem;
+}
+.hero-banner > p:nth-child(3){
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--mainText-color);
+}
+.hero-button{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--redBg-color1);
+  width: 218px;
+  height: 69px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.hero-button:hover{
+  background-color: var(--redBg-color3);
+}
+.hero-button button{
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: var(--mainText-color);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 844px) {
+  .hero-banner{
+    width: 70%;
+    top: 10%;
+    left: -10px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (max-width: 622px) {
+  .hero-banner{
+    width: 80%;
+  }
+  .hero-banner > p:nth-child(1){
+    font-size: 2rem;
+  }
+  .hero-banner > p:nth-child(1)::before{
+    width: 165px;
+    height: 30px;
+  }
+  .hero-banner > p:nth-child(2){
+    font-size: 5rem;
+  }
+  .hero-banner > p:nth-child(3){
+    font-size: 1.5rem;
   }
 }
